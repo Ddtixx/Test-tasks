@@ -28,7 +28,7 @@
 
 3. Запустить плейбук:
    ```bash 
-   ansible-playbook -i inventory.ini playbook.yml --diff```
+   ansible-playbook -i inventory.ini playbook.yml --diff
 4. Проверить доступность сайта:
    ```bash
    curl -I http://<YOUR_PUBLIC_IP>
