@@ -1,0 +1,13 @@
+- name: Установка и запуск Nginx
+  hosts: all
+  become: yes 
+
+  pre_tasks:
+    - name: Обновление кэша 
+      apt:
+        update_cache: true
+
+  roles:
+    - ufw
+    - nginx
+    - check_script

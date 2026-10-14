@@ -1,0 +1,18 @@
+---
+check_script_name: check_nginx.sh
+check_script_dest: "/usr/local/bin/{{ check_script_name }}"
+check_script_owner: root
+check_script_group: root
+check_script_mode: '0755'
+
+check_script_url: "http://127.0.0.1/"
+
+check_script_log: /var/log/nginx_check.log
+
+check_script_timeout: 5
+
+check_script_expected_code: 200
+
+check_script_cron_enabled: true
+check_script_cron_user: root
+check_script_cron_minute: "*/5"

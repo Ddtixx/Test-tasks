@@ -1,0 +1,21 @@
+---
+nginx_service_name: nginx
+nginx_user: www-data
+nginx_group: www-data
+
+nginx_web_root: /var/www/html
+
+nginx_listen_port: 80
+
+nginx_index_content: |
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <title>Test Task</title>
+  </head>
+  <body>
+      <h1>Nginx is up</h1>
+      <p>Deployed by Ansible.</p>
+  </body>
+  </html>

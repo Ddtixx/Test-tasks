@@ -1,0 +1,3 @@
+# Публичный URL для проверки снаружи.
+# Замени <YOUR_PUBLIC_IP> на реальный IP сервера.
+check_script_public_url: "http://<YOUR_PUBLIC_IP>/"

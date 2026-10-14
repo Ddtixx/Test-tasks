@@ -1,0 +1,26 @@
+---
+- name: Установка скрипта
+  copy:
+    src: "{{ check_script_name }}"
+    dest: "{{ check_script_dest }}"
+    owner: "{{ check_script_owner }}"
+    group: "{{ check_script_group }}"
+    mode: "{{ check_script_mode }}"
+
+- name: Установка cron для локального адреса
+  cron:
+    name: "Check URL local"
+    minute: "{{ check_script_cron_minute }}"
+    job: "URL={{ check_script_url }} LOG_FILE={{ check_script_log }} {{ check_script_dest }}"
+    user: "{{ check_script_cron_user }}"
+  when: check_script_cron_enabled
+
+- name: Установка cron для публичного адреса
+  cron: 
+   name: "Check URL public"
+   minute: "{{ check_script_cron_minute }}"
+   job: "URL={{ check_script_public_url }} LOG_FILE={{ check_script_log }} {{ check_script_dest }}"
+   user: "{{ check_script_cron_user }}"
+  when:
+    - check_script_cron_enabled
+    - check_script_public_url | length > 0

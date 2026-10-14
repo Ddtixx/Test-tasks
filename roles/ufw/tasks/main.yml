@@ -1,0 +1,28 @@
+---
+- name: Установка ufw
+  apt:
+    name: ufw
+    state: present
+
+- name: Разрешить SSH
+  ufw:
+    rule: allow
+    port: "22"
+    proto: tcp
+
+- name: Разрешить HTTP
+  ufw:
+    rule: allow
+    port: "80"
+    proto: tcp
+
+- name: Запустить ufw
+  ufw:
+    state: enabled
+    policy: deny
+    direction: incoming
+
+- name: Запуск стандартной политики для исходящего трафика
+  ufw: 
+    policy: allow
+    direction: outgoing

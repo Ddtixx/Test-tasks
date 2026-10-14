@@ -1,0 +1,25 @@
+# Ansible
+*.retry
+.ansible/
+
+# Inventory и host_vars (реальные IP и хосты)
+inventory.ini
+inventory/
+host_vars/*.yml
+!host_vars/*.yml.example
+
+# Python
+__pycache__/
+*.pyc
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Логи
+*.log
