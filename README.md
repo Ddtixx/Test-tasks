@@ -19,7 +19,7 @@
 1. Скопировать `inventory.ini.example` в `inventory.ini`, указать хост:
    ```bash
    cp inventory.ini.example inventory.ini
-   nano inventory.ini```
+   nano inventory.ini
 2. Копировать host_vars/node1.yml.example в host_vars/node1.yml
    и заменить <YOUR_PUBLIC_IP> на реальный публичный IP сервера:
    ```bash
@@ -31,11 +31,11 @@
    ansible-playbook -i inventory.ini playbook.yml --diff```
 4. Проверить доступность сайта:
    ```bash
-   curl -I http://<YOUR_PUBLIC_IP>```
+   curl -I http://<YOUR_PUBLIC_IP>
 
 5. Проверить открытые и закрытые порты через nmap:
    ```bash
-   nmap -p 22,80,443,3306,5432 <YOUR_PUBLIC_IP>```
+   nmap -p 22,80,443,3306,5432 <YOUR_PUBLIC_IP>
  
 # Структура плейбука
 
